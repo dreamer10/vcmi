@@ -123,6 +123,9 @@ public:
 	std::string typeName;
 	std::string subTypeName;
 
+	int ambientSound;
+
+
 	CGObjectInstance();
 	~CGObjectInstance();
 
@@ -183,6 +186,7 @@ public:
 		}
 
 		h & pos & ID & subID & id & tempOwner & blockVisit & appearance;
+		h & ambientSound;
 		//definfo is handled by map serializer
 	}
 

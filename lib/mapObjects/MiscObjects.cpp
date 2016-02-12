@@ -714,6 +714,8 @@ void CGMine::initObj(CRandomGenerator & rand)
 	}
 
 	producedQuantity = defaultResProduction();
+
+	VLC->objtypeh->getHandlerFor(ID, subID)->setAmbient(this);
 }
 
 bool CGMine::isAbandoned() const
@@ -1144,6 +1146,8 @@ void CGMonolith::initObj(CRandomGenerator & rand)
 		channel = TeleportChannelID(cb->gameState()->map->teleportChannels.size());
 
 	addToChannel(cb->gameState()->map->teleportChannels, this);
+
+	VLC->objtypeh->getHandlerFor(ID, subID)->setAmbient(this);
 }
 
 void CGSubterraneanGate::onHeroVisit( const CGHeroInstance * h ) const
@@ -1167,6 +1171,8 @@ void CGSubterraneanGate::onHeroVisit( const CGHeroInstance * h ) const
 void CGSubterraneanGate::initObj(CRandomGenerator & rand)
 {
 	type = BOTH;
+
+	VLC->objtypeh->getHandlerFor(ID, subID)->setAmbient(this);
 }
 
 void CGSubterraneanGate::postInit() //matches subterranean gates into pairs
@@ -1643,6 +1649,8 @@ void CGShrine::initObj(CRandomGenerator & rand)
 
 		spell = *RandomGeneratorUtil::nextItem(possibilities, rand);
 	}
+
+	VLC->objtypeh->getHandlerFor(ID, subID)->setAmbient(this);
 }
 
 std::string CGShrine::getHoverText(PlayerColor player) const
@@ -1928,6 +1936,8 @@ void CGBoat::initObj(CRandomGenerator & rand)
 void CGSirens::initObj(CRandomGenerator & rand)
 {
 	blockVisit = true;
+
+	VLC->objtypeh->getHandlerFor(ID, subID)->setAmbient(this);
 }
 
 std::string CGSirens::getHoverText(const CGHeroInstance * hero) const
